@@ -93,7 +93,7 @@
 
 .foot-wm span {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-ui);
   font-weight: 900;
   font-size: clamp(100px, 18vw, 280px);
   color: transparent;
