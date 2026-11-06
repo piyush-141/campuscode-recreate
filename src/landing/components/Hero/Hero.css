@@ -1,0 +1,30 @@
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:#f8f8f6;padding-top:var(--nav-h)}
+.hero-blob{position:absolute;pointer-events:none;border-radius:50%;filter:blur(65px)}
+.hero-blob-1{width:620px;height:620px;right:-50px;top:10%;background:radial-gradient(circle,rgba(167,139,250,.22),transparent 68%)}
+.hero-blob-2{width:480px;height:480px;left:28%;bottom:-20%;background:radial-gradient(circle,rgba(190,242,100,.16),transparent 70%)}
+.hero-blob-3{width:300px;height:300px;right:35%;bottom:-10%;background:radial-gradient(circle,rgba(196,181,253,.18),transparent 70%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(25,25,25,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(25,25,25,.035) 1px,transparent 1px);background-size:66px 66px;pointer-events:none}
+.hero-orbits{position:absolute;inset:8% 0 0;width:100%;height:88%;pointer-events:none;overflow:visible}
+.hero-orbits path{fill:none;stroke:rgba(120,139,190,.28);stroke-width:1;stroke-dasharray:7 11;animation:orbit-drift 32s linear infinite}
+.hero-orbits path:nth-child(2){animation-duration:39s;animation-direction:reverse}.hero-orbits path:nth-child(3){animation-duration:46s}
+.hero-orbits circle{fill:#9480ff;filter:drop-shadow(0 0 5px rgba(148,128,255,.55));animation:dot-glow 3.6s ease-in-out infinite alternate}
+.hero-orbits circle:nth-of-type(even){animation-delay:1.3s}
+@keyframes orbit-drift{to{stroke-dashoffset:360}}@keyframes dot-glow{from{opacity:.42;transform:scale(.8);transform-origin:center}to{opacity:.95;transform:scale(1.12);transform-origin:center}}
+.hero-inner{position:relative;z-index:1;display:flex;flex-direction:column;padding-top:3.6rem;padding-bottom:5rem}
+.hero-content{display:flex;flex-direction:column;align-items:flex-start;gap:0;width:100%}
+.hero-eyebrow,.hero-index,.hero-scroll-label,.hero-page-count{font-family:var(--font-ui);font-size:9px;letter-spacing:.12em;color:#858585}
+.hero-eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:3.2rem}.hero-eyebrow span{width:6px;height:6px;border-radius:50%;background:#84bd16;box-shadow:0 0 8px #84bd1650}
+.hero-index{margin-left:3%;margin-bottom:2rem;font-size:8px;letter-spacing:.2em}
+.hero-heading{display:flex;flex-direction:column;line-height:1;letter-spacing:-.065em;user-select:none;margin:40px 0;font-family:Inter,sans-serif;font-size:186.24px;color:#111111}
+.hero-line{overflow:hidden;line-height:.82;display:block}
+.hero-word{display:block;font-family:Inter,sans-serif;font-weight:900;font-size:186.24px;line-height:.82;letter-spacing:-.065em}
+.hero-word-solid{color:#101010}.hero-word-outline{color:transparent;-webkit-text-stroke:1px rgba(20,20,20,.45);transition:color .28s ease,-webkit-text-stroke-color .28s ease;cursor:pointer}
+.hero-word-outline:hover{color:#7562ff;-webkit-text-stroke-color:#7562ff}
+.hero-bottom{display:flex;align-items:center;gap:3.1rem;margin-top:2.2rem;margin-left:3%}
+.hero-sub{font-family:var(--font-ui);font-size:14px;color:#686868;line-height:1.75;max-width:260px;flex-shrink:0}
+.hero-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;padding:16px 17px;min-width:160px;height:48px;font-family:var(--font-ui);font-size:8px;font-weight:500;letter-spacing:.04em;color:#171717;background:#fff;border:1px solid #aaa;border-radius:0;white-space:nowrap;transition:background .18s,color .18s,border-color .18s}
+.hero-btn span{font-size:13px}.hero-btn:hover{background:#111;color:#fff;border-color:#111}
+.hero-scroll-label,.hero-page-count{position:absolute;bottom:2rem;z-index:2;font-size:8px}.hero-scroll-label{left:var(--pad-x)}.hero-page-count{right:var(--pad-x)}
+@media(max-width:768px){.hero-inner{padding-top:2.5rem}.hero-eyebrow{margin-bottom:2.5rem}.hero-heading{font-size:clamp(64px,12vw,186.24px)}.hero-word{font-size:inherit}.hero-bottom{margin-left:0;gap:1.2rem;flex-wrap:wrap}.hero-sub{font-size:13px}.hero-orbits{opacity:.8}.hero-grid{background-size:48px 48px}}
+@media(max-width:480px){.hero-heading{font-size:clamp(46px,12vw,64px)}.hero-word{font-size:inherit}.hero-bottom{align-items:flex-start;flex-direction:column}.hero-index{margin-left:0}.hero-scroll-label,.hero-page-count{bottom:1rem}}
+@media(prefers-reduced-motion:reduce){.hero-orbits path,.hero-orbits circle{animation:none}}

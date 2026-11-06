@@ -1,0 +1,7 @@
+.mq-wrap{height:64px;display:flex;align-items:center;overflow:hidden;border-top:1px solid #e4e4e2;border-bottom:1px solid #e4e4e2;background:#f8f8f6;user-select:none}
+.mq-track{display:flex;align-items:center;flex:0 0 auto;animation:mq-scroll 34s linear infinite}
+.mq-wrap:hover .mq-track{animation-play-state:paused}
+.mq-item{display:inline-flex;align-items:center;gap:34px;padding-inline:13px;font-family:var(--font-ui);font-weight:400;font-size:12px;letter-spacing:-.035em;color:#777;white-space:nowrap}
+.mq-star{font-size:13px;color:#806cff;line-height:1}
+@keyframes mq-scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.mq-track{animation:none}}

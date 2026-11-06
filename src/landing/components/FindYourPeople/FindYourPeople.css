@@ -1,0 +1,207 @@
+/* ── FindYourPeople.css ── */
+
+.fyp {min-height:100vh;padding:0;background:#fafaf8;border-top:0}
+
+.fyp-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;max-width:none;padding:0}
+.fyp-left{padding:5rem 8vw;display:flex;flex-direction:column;justify-content:center;border-right:1px solid #dededb}
+.fyp-right{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+
+/* ── Left ── */
+.fyp-lbl {
+  display: block;
+  margin-bottom: var(--sp-8);
+}
+
+.fyp-heading {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+}
+
+.fyp-line {
+  overflow: hidden;
+  display: block;
+}
+
+.fyp-word {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(56px, 9vw, 116px);
+  line-height: 0.9;
+  color: var(--text);
+  letter-spacing: -0.025em;
+}
+
+.fyp-word-out {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--text);
+  opacity: 0.38;
+}
+
+.fyp-desc {
+  margin-top: var(--sp-10);
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 300px;
+}
+
+.fyp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: var(--sp-8);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: gap var(--dur-fast);
+}
+.fyp-link:hover { gap: 0.65em; }
+.fyp-link{display:none}
+.fyp-lbl{font:8px var(--font-ui);letter-spacing:.15em;color:#777;margin-bottom:3rem}
+.fyp-word{font:900 clamp(76px,8vw,120px)/.82 Inter,sans-serif;letter-spacing:-.065em;color:#111}
+.fyp-word-out{color:transparent;-webkit-text-stroke:1px #888;opacity:1}
+.fyp-desc{margin-top:3rem;font:12px/1.9 var(--font-ui);color:#666}
+.fyp-orbit{width:min(24vw,310px);aspect-ratio:1;position:relative;border:1px solid #d7d7d3;border-radius:50%;display:grid;place-items:center}
+.fyp-orbit-ring{position:absolute;inset:14%;border:1px solid #dededb;border-radius:50%}.fyp-orbit-ring:nth-child(2){inset:-15%}
+.fyp-orbit-cc{width:75px;height:75px;display:grid;place-items:center;border:1px solid #7863ff;color:#7863ff;font:700 18px Inter,sans-serif}
+.fyp-orbit-dot{position:absolute;width:7px;height:7px;border-radius:50%;background:#7863ff;box-shadow:0 0 8px #7863ff70}.d1{top:13%;left:50%}.d2{right:20%;top:32%}.d3{right:8%;top:50%}.d4{bottom:10%;left:50%}
+.fyp-right:after{content:'Build with developers.\A Think with designers.\A Compete with builders.';white-space:pre;text-align:left;font:12px/1.9 var(--font-ui);color:#666;margin-left:0}
+
+/* ════════════════════════════
+   Network card
+════════════════════════════ */
+.fyp-right { flex-shrink: 0; }
+
+.fyp-card {
+  position: relative;
+  width: 220px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  box-shadow: var(--sh-md);
+  animation: fyp-float 5s ease-in-out infinite;
+}
+
+@keyframes fyp-float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Card header */
+.fyp-card-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding-bottom: var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--sp-4);
+}
+
+.fyp-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--r-md);
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.95);
+  letter-spacing: -0.04em;
+  flex-shrink: 0;
+}
+
+.fyp-badge-name {
+  display: block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.fyp-badge-sub {
+  display: block;
+  font-size: 0.625rem;
+  color: var(--text-faint);
+  line-height: 1.3;
+}
+
+/* Profile rows */
+.fyp-profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fyp-profile {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.fyp-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.9);
+  flex-shrink: 0;
+}
+
+.fyp-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fyp-bar {
+  height: 3.5px;
+  background: var(--border);
+  border-radius: 2px;
+}
+.fyp-bar-w { width: 68%; }
+.fyp-bar-n { width: 42%; }
+
+.fyp-role {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Deco */
+.fyp-deco {
+  position: absolute;
+  font-weight: 300;
+  color: var(--purple-light);
+  pointer-events: none;
+  opacity: 0.7;
+  line-height: 1;
+}
+
+.fyp-deco-1 { top: -18px; right: 14px;  font-size: 1rem; }
+.fyp-deco-2 { top:  -8px; left: -18px;  font-size: 0.85rem; }
+.fyp-deco-3 { bottom: -14px; right: -10px; font-size: 0.95rem; }
+.fyp-deco-4 { bottom: -20px; left: 24px;  font-size: 0.8rem; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .fyp-inner{grid-template-columns:1fr}.fyp-left{border-right:0}.fyp-right{min-height:55vh}.fyp-orbit{width:min(60vw,300px)}
+}
+
+@media (max-width: 480px) {
+  .fyp-word { font-size: clamp(44px, 16vw, 72px); }
+  .fyp-word-out { -webkit-text-stroke: 1px var(--text); }
+}

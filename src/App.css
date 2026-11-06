@@ -1,0 +1,9 @@
+/* App-level reset — Vite default styles cleared */
+#root {
+  min-height: 100vh;
+}
+
+.section {
+  position: relative;
+}
+

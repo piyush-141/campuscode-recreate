@@ -1,0 +1,148 @@
+/* ============================================
+   CAMPUSCODE — Global Design Tokens & Base CSS
+   Refined v2 — matches live reference
+   ============================================ */
+
+/* ── Google Fonts already loaded via index.html ── */
+
+:root {
+  /* ── Palette ── */
+  --white:          #FFFFFF;
+  --bg:             #FAFAFA;
+  --bg-alt:         #F5F5F4;       /* stone-100 equiv */
+  --text:           #0A0A0A;
+  --text-mid:       #525252;       /* neutral-600 */
+  --text-muted:     #737373;       /* neutral-500 */
+  --text-faint:     #A3A3A3;       /* neutral-400 */
+  --border:         #E5E5E5;       /* neutral-200 */
+  --border-mid:     #D4D4D4;       /* neutral-300 */
+
+  /* Purple accent */
+  --purple:         #7C5CFC;
+  --purple-mid:     #9B7BFF;
+  --purple-light:   #C4B5FD;       /* violet-300 */
+  --purple-xlight:  #EDE9FE;       /* violet-100 */
+  --purple-glow:    rgba(124, 92, 252, 0.15);
+
+  /* ── Typography ── */
+  --font-display: 'Barlow', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Inter', system-ui, -apple-system, sans-serif;
+
+  /* ── Spacing scale (rem, 4px base) ── */
+  --sp-1:   0.25rem;   /* 4px  */
+  --sp-2:   0.5rem;    /* 8px  */
+  --sp-3:   0.75rem;   /* 12px */
+  --sp-4:   1rem;      /* 16px */
+  --sp-5:   1.25rem;   /* 20px */
+  --sp-6:   1.5rem;    /* 24px */
+  --sp-8:   2rem;      /* 32px */
+  --sp-10:  2.5rem;    /* 40px */
+  --sp-12:  3rem;      /* 48px */
+  --sp-16:  4rem;      /* 64px */
+  --sp-20:  5rem;      /* 80px */
+  --sp-24:  6rem;      /* 96px */
+  --sp-28:  7rem;      /* 112px */
+  --sp-32:  8rem;      /* 128px */
+
+  /* ── Layout ── */
+  --max-w:    1280px;
+  --pad-x:    2.5rem;    /* 40px gutter */
+  --nav-h:    60px;
+
+  /* ── Radii ── */
+  --r-sm:    0.375rem;
+  --r-md:    0.5rem;
+  --r-lg:    0.75rem;
+  --r-xl:    1rem;
+  --r-2xl:   1.5rem;
+  --r-full:  9999px;
+
+  /* ── Shadows ── */
+  --sh-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --sh-sm: 0 1px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.03);
+  --sh-md: 0 4px 16px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.03);
+  --sh-lg: 0 8px 32px rgba(0,0,0,0.09), 0 4px 8px rgba(0,0,0,0.04);
+  --sh-xl: 0 20px 60px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05);
+
+  /* ── Motion ── */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:   150ms;
+  --dur-base:   250ms;
+  --dur-slow:   400ms;
+  --dur-slower: 600ms;
+}
+
+/* ── Box-sizing reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-ui);
+  font-size: 0.9375rem;  /* 15px */
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img, svg { display: block; max-width: 100%; }
+button   { cursor: pointer; border: none; background: none; font-family: inherit; }
+a        { color: inherit; text-decoration: none; }
+ul, ol   { list-style: none; }
+
+/* ── Layout helpers ── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--pad-x);
+}
+
+/* ── Section base ── */
+.section {
+  position: relative;
+}
+
+/* ── Shared: section label ── */
+.lbl {
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;  /* 11px */
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+/* ── Outline text utility ── */
+.txt-outline-blk {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--text);
+}
+
+.txt-outline-purple {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--purple-light);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 3px; }
+
+/* ── Media ── */
+@media (max-width: 768px) {
+  :root { --pad-x: 1.25rem; }
+}

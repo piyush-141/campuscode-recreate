@@ -1,0 +1,25 @@
+.bus-transition{min-height:100vh;position:relative;overflow:hidden;display:grid;place-items:center;background:#f8f8f6;color:#111;font-family:var(--font-ui,Inter,sans-serif)}
+.bus-transition-grid{position:absolute;inset:0;opacity:.28;background-image:linear-gradient(rgba(20,20,20,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(20,20,20,.07) 1px,transparent 1px);background-size:60px 60px}
+.bus-track{position:relative;width:min(1360px,calc(100vw - 52px));height:194px;border:2px dashed #dededb;border-radius:36px;background:rgba(255,255,255,.75);overflow:hidden}
+.campus-bus{position:absolute;left:2.6%;bottom:25px;width:224px;height:96px;border-radius:24px;background:#111;animation:campus-bus-drive 2s cubic-bezier(.55,.05,.8,.4) forwards;z-index:2}
+.campus-bus:before{content:"";position:absolute;left:32px;right:42px;top:22px;height:48px;background:transparent}
+.campus-bus-mark{position:absolute;left:30px;top:24px;display:flex;gap:12px}
+.campus-bus-mark i{display:block;width:39px;height:48px;border-radius:6px;transform:skew(-18deg);background:#fff}
+.campus-bus-mark i:nth-child(2){background:#785cff}.campus-bus-mark i:nth-child(3){background:#86ca12}
+.campus-bus-wheel{position:absolute;bottom:-11px;width:34px;height:34px;border:5px solid #fff;border-radius:50%;background:#111}
+.campus-bus-wheel-one{left:34px}.campus-bus-wheel-two{right:36px}
+.bus-stop{position:absolute;right:20px;top:50%;height:104px;width:11px;transform:translateY(-50%);background:#86bd18;border-radius:8px}
+.bus-label{position:absolute;z-index:3;top:25px;color:#606060;font-size:32px;font-weight:700;letter-spacing:.1em;opacity:0}
+.bus-label-ready{left:20%;opacity:1;animation:bus-ready-out .45s 1.15s forwards}.bus-label-ready b{position:absolute;left:min(64vw,850px);white-space:nowrap;top:4px;font-size:30px}
+.bus-label-connecting{right:8%;animation:bus-connect-in .35s 1.25s forwards}
+.bus-connection-dots{position:absolute;left:44%;top:50%;display:flex;gap:48px;transform:translateY(-50%);opacity:0;animation:bus-dots-in .3s 1.1s forwards}
+.bus-connection-dots i{width:18px;height:18px;border-radius:50%;background:#a21e1e;animation:bus-dot-pulse .55s ease-in-out infinite alternate}
+.bus-connection-dots i:nth-child(2){animation-delay:.16s}.bus-connection-dots i:nth-child(3){animation-delay:.32s}
+.bus-transition-caption{position:absolute;bottom:4%;font:700 9px var(--font-ui,Inter,sans-serif);letter-spacing:.24em;color:#888}
+@keyframes campus-bus-drive{0%{left:2.6%}48%{left:2.6%}100%{left:calc(100% - 250px)}}
+@keyframes bus-ready-out{to{opacity:0;transform:translateX(-10px)}}
+@keyframes bus-connect-in{to{opacity:1}}
+@keyframes bus-dots-in{to{opacity:1}}
+@keyframes bus-dot-pulse{to{opacity:.32;transform:scale(.75)}}
+@media(max-width:700px){.bus-track{height:160px;width:calc(100vw - 28px);border-radius:28px}.campus-bus{transform:scale(.72);transform-origin:left bottom;animation-name:campus-bus-drive-mobile}.bus-label{font-size:18px;top:18px}.bus-label-ready b{font-size:16px;left:48vw}.bus-label-connecting{right:6%}.bus-stop{height:80px;right:12px}.bus-connection-dots{gap:20px;left:42%}.bus-connection-dots i{width:12px;height:12px}@keyframes campus-bus-drive-mobile{0%{left:2%}48%{left:2%}100%{left:calc(100% - 160px)}}}
+@media(prefers-reduced-motion:reduce){.campus-bus{animation-duration:2s}.bus-connection-dots i{animation:none}}

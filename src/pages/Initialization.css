@@ -1,0 +1,29 @@
+.initialization-screen{position:relative;min-height:100vh;overflow:hidden;background:#090909;color:#f7f7f7;font-family:Inter,Arial,sans-serif;display:grid;place-items:center}
+.initialization-screen:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,255,255,.025),transparent 46%);pointer-events:none}
+.initialization-grid{position:absolute;inset:0;opacity:.18;background-image:linear-gradient(rgba(255,255,255,.11) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.11) 1px,transparent 1px);background-size:58px 58px;mask-image:radial-gradient(ellipse at center,#000 0,transparent 72%)}
+.initialization-header,.initialization-footer{position:absolute;left:2.5%;right:2.5%;display:flex;align-items:center;justify-content:space-between;z-index:1}
+.initialization-header{top:4%;}
+.initialization-brand{display:flex;align-items:center;gap:14px;color:#f5f5f5}
+.initialization-brand-mark{display:flex;align-items:center;gap:7px;height:40px}
+.initialization-brand-mark i{display:block;width:14px;height:38px;border-radius:2px;transform:skew(-17deg);background:#f5f5f5}
+.initialization-brand-mark i:nth-child(2){background:#795aff}.initialization-brand-mark i:nth-child(3){background:#a0e85a}
+.initialization-brand b,.initialization-brand small{display:block}.initialization-brand b{font-size:17px;letter-spacing:.2em}.initialization-brand small{font:500 8px var(--font-ui,Inter,sans-serif);letter-spacing:.34em;color:#767676;margin-top:3px}
+.initialization-secure,.initialization-footer,.initialization-progress-label,.initialization-access{font:700 10px/1.4 var(--font-ui,Inter,sans-serif);letter-spacing:.2em;color:#888}
+.initialization-secure,.initialization-footer span:last-child{display:flex;align-items:center;gap:10px}
+.initialization-secure i,.initialization-footer i{width:9px;height:9px;border-radius:50%;background:#a2e95b;box-shadow:0 0 16px rgba(162,233,91,.5)}
+.initialization-center{position:relative;z-index:1;width:min(430px,80vw);text-align:center;transform:translateY(-1vh)}
+.initialization-mark{height:74px;display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:24px}
+.initialization-mark i{width:22px;height:57px;border-radius:4px;transform:skew(-17deg);background:#f5f5f5;box-shadow:0 0 16px rgba(255,255,255,.08)}
+.initialization-mark i:nth-child(2){background:#795aff}.initialization-mark i:nth-child(3){background:#a0e85a}
+.initialization-center h1{font-size:18px;line-height:1.2;letter-spacing:.48em;padding-left:.48em;font-weight:800}
+.initialization-sync{margin-top:14px;font:700 10px var(--font-ui,Inter,sans-serif);letter-spacing:.42em;color:#a0e85a}
+.initialization-progress-label{display:flex;justify-content:space-between;margin-top:52px;margin-bottom:12px;text-align:left;font-size:10px}
+.initialization-progress-label strong{font:800 14px var(--font-ui,Inter,sans-serif);letter-spacing:0;color:#f2f2f2}
+.initialization-track{height:4px;background:#252525;border-radius:9px;overflow:hidden}
+.initialization-track span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#795aff,#a0e85a);animation:initialization-fill 1.6s cubic-bezier(.2,.8,.2,1) forwards}
+.initialization-access{margin-top:38px;display:flex;justify-content:center;align-items:center;gap:16px}
+.initialization-access b{font-size:12px;color:#a0e85a;border:1px solid rgba(160,232,90,.45);border-radius:24px;padding:7px 16px;letter-spacing:.18em;background:rgba(160,232,90,.06)}
+.initialization-footer{bottom:2.5%;font-size:9px}
+@keyframes initialization-fill{to{width:100%}}
+@media(max-width:600px){.initialization-header{top:24px}.initialization-brand b{font-size:13px}.initialization-brand-mark{height:32px}.initialization-brand-mark i{height:30px;width:11px}.initialization-secure,.initialization-footer{font-size:7px;letter-spacing:.12em}.initialization-footer{left:5%;right:5%;gap:8px}.initialization-footer span:nth-child(2){display:none}.initialization-progress-label{margin-top:42px}.initialization-center h1{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.initialization-track span{animation-duration:.2s}}

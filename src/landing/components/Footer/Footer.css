@@ -1,0 +1,122 @@
+/* ── Footer.css ── */
+
+.foot {
+  background: #f8f8f6;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.foot-top {
+  display:grid;grid-template-columns:1.2fr 1.5fr;gap:4rem;padding-top:4rem;padding-bottom:2rem;border:0;max-width:1200px
+}
+
+/* ── Brand ── */
+.foot-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.foot-logo{align-items:center;gap:8px}.foot-logo-mark{width:32px;height:32px;object-fit:contain}.foot-logo-copy{display:flex;flex-direction:column;line-height:1}.foot-logo-copy strong{font:700 13px var(--font-ui);letter-spacing:.08em;color:#111}.foot-logo-copy small{font:6px var(--font-ui);letter-spacing:.12em;color:#777;margin-top:3px}
+
+.foot-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.28em;
+}
+
+.foot-logo-slashes {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.foot-logo-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.foot-tagline {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+.foot-copy {
+  font-size: 0.6875rem;
+  color: var(--text-faint);
+  margin-top: auto;
+}
+.foot-status{max-width:1200px;display:flex;align-items:center;gap:28px;padding-block:1.2rem;font:7px var(--font-ui);letter-spacing:.12em;color:#666}.foot-status span{display:flex;align-items:center;gap:8px;margin-right:4px}.foot-status i{width:7px;height:7px;border-radius:50%;background:#22b879;box-shadow:0 0 0 4px #22b87918}.foot-status a:hover{color:#111}
+
+/* ── Columns ── */
+.foot-cols {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:2rem
+}
+
+.foot-col-h {
+  font-family: var(--font-ui);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #7965ff;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+
+.foot-col-list {
+  display: flex;
+  flex-direction: column;
+  gap: .65rem;
+}
+
+.foot-col-link {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  transition: color var(--dur-fast);
+}
+.foot-col-link:hover { color: var(--text); }
+
+/* ── Giant wordmark ── */
+.foot-wm {
+  line-height: 0.78;
+  overflow: hidden;
+  margin-bottom: 0;
+  text-align:center;
+}
+
+.foot-wm span {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(100px, 18vw, 280px);
+  color: transparent;
+  -webkit-text-stroke: 0;
+  color:#e9e9ed;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  padding-inline: var(--pad-x);
+  opacity: 1;
+}
+.foot-bottom{max-width:1120px;border-top:1px solid #dededb;padding-block:1rem 1.4rem;display:flex;justify-content:space-between;font:7px var(--font-ui);letter-spacing:.12em;color:#777}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .foot-top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-12);
+  }
+  .foot-brand { max-width: 300px; }
+  .foot-copy  { margin-top: 0; }
+}
+
+@media (max-width: 600px) {
+  .foot-cols { grid-template-columns: repeat(2, 1fr); }
+  .foot-wm span { font-size: clamp(60px, 20vw, 120px); }
+}

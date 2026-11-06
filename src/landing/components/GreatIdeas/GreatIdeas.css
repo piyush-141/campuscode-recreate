@@ -1,0 +1,98 @@
+/* ── GreatIdeas.css ── */
+
+.gi {
+  position: relative;
+  padding-block: var(--sp-32);
+  background: #fff;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Blobs */
+.gi-blob {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(90px);
+}
+
+.gi-blob-1 {
+  width: 580px;
+  height: 580px;
+  right: -100px;
+  top: 50%;
+  translate: 0 -55%;
+  background: radial-gradient(ellipse at center,
+    rgba(196, 181, 253, 0.6) 0%,
+    rgba(167, 139, 250, 0.3) 38%,
+    transparent 68%
+  );
+}
+
+.gi-blob-2 {
+  width: 300px;
+  height: 300px;
+  right: 160px;
+  bottom: 15%;
+  background: radial-gradient(ellipse at center,
+    rgba(221, 214, 254, 0.5) 0%,
+    transparent 70%
+  );
+  filter: blur(70px);
+}
+
+.gi-watermark{position:absolute;z-index:0;top:20%;left:-3%;white-space:nowrap;font-family:Inter,sans-serif;font-weight:900;font-size:clamp(180px,29vw,440px);line-height:.8;letter-spacing:-.075em;color:rgba(15,15,15,.035);transform:rotate(-8deg);pointer-events:none;user-select:none}
+
+.gi-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.gi-lbl {
+  display: block;
+  margin-bottom: var(--sp-10);
+}
+
+/* Heading */
+.gi-heading {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+}
+
+.gi-line {
+  overflow: hidden;
+  display: block;
+}
+
+.gi-word {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(60px, 10vw, 132px);
+  line-height: 0.9;
+  color: var(--text);
+  letter-spacing: -0.025em;
+}
+
+.gi-word-out {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--purple-light);
+  opacity: 0.9;
+}
+
+.gi-desc {
+  margin-top: var(--sp-10);
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 320px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gi-word { font-size: clamp(48px, 14vw, 80px); }
+  .gi-word-out { -webkit-text-stroke: 1px var(--purple-light); }
+  .gi-blob-1 { width: 320px; height: 320px; right: -60px; }
+  .gi-blob-2 { display: none; }
+}
